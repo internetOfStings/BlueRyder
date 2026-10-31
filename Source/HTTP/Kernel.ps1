@@ -25,7 +25,7 @@ while ($http.IsListening) {
 
         $request = [Request]::new($context.Request)
         $disp = [Dispatcher]::new()
-        $request.ScreenDump()
+        #$request.ScreenDump()
         $response = $disp.Dispatch($request)
 
         # Converts html to byte stream then sends it as a response.
