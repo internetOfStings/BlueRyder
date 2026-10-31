@@ -5,7 +5,7 @@ using module .\Dispatcher.psm1
 $http = [System.Net.HttpListener]::new() 
 
 # Hostname and port to listen on
-$http.Prefixes.Add("http://localhost:8080/")
+$http.Prefixes.Add("http://$($_br_.WebService.HostListenOn):$($_br_.WebService.PortListenOn)/")
 
 $http.Start()
 

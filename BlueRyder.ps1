@@ -38,7 +38,7 @@ while ($quit -ne 'q') {
     $quit = Read-Host "Use q to terminate server: "
     if ($quit -eq 'q') {
         $_br_.WebService.TerminateServer = $true
-        Invoke-Webrequest "http://$($_br_.WebService.HostListenOn):8080/"
+        Invoke-Webrequest "http://$($_br_.WebService.HostListenOn):$($_br_.WebService.PortListenOn)/"
     }
 }
 
