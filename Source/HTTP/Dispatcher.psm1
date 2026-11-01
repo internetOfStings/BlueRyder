@@ -1,6 +1,7 @@
 using module ..\Attributes\Route.psm1
 using module .\Response.psm1
 using module .\Request.psm1
+using module ..\Autoload\CommonAES.psm1
 
 class Dispatcher {
 
@@ -44,7 +45,7 @@ class Dispatcher {
             $s = $r::new()
             return $s.Response($request.HttpMethod, $request.queryString, $request.Post)
 
-        } elseif ($request.HttpMethod -eq 'POST') {
+        } elseif ($request.HttpMethod -eq 'POST' -and $this.postRoutes.ContainsKey($request.Route)) {
 
             $r = $this.postRoutes[$request.Route]
             $s = $r::new()
