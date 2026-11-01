@@ -9,7 +9,8 @@ class Home {
         $html += "<h1>BlueRyder</h1>"
 
         $html += '<a href="/get-example?hello=world">GET Example</a><br>'
-        $html += '<a href="/post-example">POST Example</a>'
+        $html += '<a href="/post-example">POST Example</a><br>'
+        $html += '<a href="/aes-example">AES Example</a><br>'
 
         $html += "</body></html>"
 
